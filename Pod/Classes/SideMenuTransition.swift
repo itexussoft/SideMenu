@@ -272,8 +272,10 @@ open class SideMenuTransition: UIPercentDrivenInteractiveTransition {
         mainViewController.view.motionEffects.removeAll()
         mainViewController.view.layer.shadowOpacity = 0
         menuView.layer.shadowOpacity = 0
-        if let topNavigationController = mainViewController as? UINavigationController {
-            topNavigationController.interactivePopGestureRecognizer!.isEnabled = true
+        if SideMenuManager.menuAllowNavPopGesture {
+            if let topNavigationController = mainViewController as? UINavigationController {
+                topNavigationController.interactivePopGestureRecognizer!.isEnabled = true
+            }
         }
         if let originalSuperview = originalSuperview {
             originalSuperview.addSubview(mainViewController.view)
@@ -360,8 +362,10 @@ open class SideMenuTransition: UIPercentDrivenInteractiveTransition {
             }
         case .viewSlideOut: break;
         }
-        if let topNavigationController = mainViewController as? UINavigationController {
-            topNavigationController.interactivePopGestureRecognizer!.isEnabled = false
+        if SideMenuManager.menuAllowNavPopGesture {
+            if let topNavigationController = mainViewController as? UINavigationController {
+                topNavigationController.interactivePopGestureRecognizer!.isEnabled = false
+            }
         }
     }
     
