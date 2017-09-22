@@ -1,4 +1,4 @@
-## This repo is forked form original SideMenu with some need improvements by Itexus company
+## This repo was forked form original SideMenu with some improvements by Itexus company
 
 # ▤ SideMenu
 [![Version](https://img.shields.io/cocoapods/v/SideMenu.svg?style=flat)](http://cocoapods.org/pods/SideMenu)
@@ -263,4 +263,3 @@ A special thank you to everyone that has [contributed](https://github.com/jonkyk
 ## License
 
 SideMenu is available under the MIT license. See the LICENSE file for more info.
-
