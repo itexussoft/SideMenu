@@ -1,3 +1,5 @@
+## This repo is forked form original SideMenu with some need improvements by Itexus company
+
 # ▤ SideMenu
 [![Version](https://img.shields.io/cocoapods/v/SideMenu.svg?style=flat)](http://cocoapods.org/pods/SideMenu)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -13,16 +15,15 @@
 > * Building and maintaining this free library takes time. Help keep me awake and buy me a coffee ☕️ via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40jonkent%2eme&lc=US&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted).
 
 ## Overview
-
 SideMenu is a simple and versatile side menu control written in Swift.
- * **It can be implemented in storyboard without a single line of [code](#code-less-storyboard-implementation).**
- * Four standard animation styles to choose from (there's even a parallax effect if you want to get weird).
- * Highly customizable without needing to write tons of custom code.
- * Supports continuous swiping between side menus on boths sides in a single gesture.
- * Global menu configuration. Set-up once and be done for all screens.
- * Menus can be presented and dismissed the same as any other view controller since this control uses [custom transitions](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/CustomizingtheTransitionAnimations.html).
- * Animations use your view controllers, not snapshots.
- * Properly handles screen rotation and in-call status bar height changes.
+* **It can be implemented in storyboard without a single line of [code](#code-less-storyboard-implementation).**
+* Four standard animation styles to choose from (there's even a parallax effect if you want to get weird).
+* Highly customizable without needing to write tons of custom code.
+* Supports continuous swiping between side menus on boths sides in a single gesture.
+* Global menu configuration. Set-up once and be done for all screens.
+* Menus can be presented and dismissed the same as any other view controller since this control uses [custom transitions](https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/CustomizingtheTransitionAnimations.html).
+* Animations use your view controllers, not snapshots.
+* Properly handles screen rotation and in-call status bar height changes.
 
 Check out the example project to see it in action!
 ### Preview Samples
@@ -31,7 +32,7 @@ Check out the example project to see it in action!
 | ![](etc/SlideOut.gif) | ![](etc/SlideIn.gif) | ![](etc/Dissolve.gif) | ![](etc/InOut.gif) |
 
 ## Requirements
- * iOS 8 or higher
+* iOS 8 or higher
 
 ## Installation
 ### CocoaPods
@@ -101,7 +102,7 @@ In your view controller's `viewDidLoad` event, do something like this (**IMPORTA
 // Define the menus
 let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: YourViewController)
 menuLeftNavigationController.leftSide = true
-// UISideMenuNavigationController is a subclass of UINavigationController, so do any additional configuration 
+// UISideMenuNavigationController is a subclass of UINavigationController, so do any additional configuration
 // of it here like setting its viewControllers. If you're using storyboards, you'll want to do something like:
 // let menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as! UISideMenuNavigationController
 SideMenuManager.menuLeftNavigationController = menuLeftNavigationController
@@ -212,7 +213,7 @@ open static var menuAnimationUsingSpringWithDamping: CGFloat = 1
 /// The animation initial spring velocity when a menu is displayed. Ignored when displayed with a gesture.
 open static var menuAnimationInitialSpringVelocity: CGFloat = 1
 
-/** 
+/**
 Automatically dismisses the menu when another view is pushed from it.
 
 Note: to prevent the menu from dismissing when presenting, set modalPresentationStyle = .overFullScreen
@@ -221,10 +222,10 @@ of the view controller being presented in storyboard or during its initalization
 open static var menuDismissOnPush = true
 
 /**
- The blur effect style of the menu if the menu's root view controller is a UITableViewController or UICollectionViewController.
+The blur effect style of the menu if the menu's root view controller is a UITableViewController or UICollectionViewController.
 
- - Note: If you want cells in a UITableViewController menu to show vibrancy, make them a subclass of UITableViewVibrantCell.
- */
+- Note: If you want cells in a UITableViewController menu to show vibrancy, make them a subclass of UITableViewVibrantCell.
+*/
 open static var menuBlurEffectStyle: UIBlurEffectStyle?
 
 /// The left menu.
@@ -234,22 +235,22 @@ open static var menuLeftNavigationController: UISideMenuNavigationController?
 open static var menuRightNavigationController: UISideMenuNavigationController?
 
 /**
- Adds screen edge gestures to a view to present a menu.
+Adds screen edge gestures to a view to present a menu.
 
- - Parameter toView: The view to add gestures to.
- - Parameter forMenu: The menu (left or right) you want to add a gesture for. If unspecified, gestur=es will be added for both sides.
+- Parameter toView: The view to add gestures to.
+- Parameter forMenu: The menu (left or right) you want to add a gesture for. If unspecified, gestur=es will be added for both sides.
 
- - Returns: The array of screen edge gestures added to `toView`.
- */
+- Returns: The array of screen edge gestures added to `toView`.
+*/
 @discardableResult open class func menuAddScreenEdgePanGesturesToPresent(toView: UIView, forMenu:UIRectEdge? = nil) -> [UIScreenEdgePanGestureRecognizer]
 
 /**
- Adds a pan edge gesture to a view to present menus.
+Adds a pan edge gesture to a view to present menus.
 
- - Parameter toView: The view to add a pan gesture to.
+- Parameter toView: The view to add a pan gesture to.
 
- - Returns: The pan gesture added to `toView`.
- */
+- Returns: The pan gesture added to `toView`.
+*/
 @discardableResult open class func menuAddPanGestureToPresent(toView: UIView) -> UIPanGestureRecognizer
 ```
 
@@ -262,3 +263,4 @@ A special thank you to everyone that has [contributed](https://github.com/jonkyk
 ## License
 
 SideMenu is available under the MIT license. See the LICENSE file for more info.
+
